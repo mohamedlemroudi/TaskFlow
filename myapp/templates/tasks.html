@@ -4,10 +4,24 @@
 
     <div>
         <h1>{{ task.title }}</h1>
+
+        {% if task.done == False %}
+        
+        <p>Tarea pendiente</p>
+
+        {% else %}
+
+        <p>Tarea realizada</p>
+
+        {% endif %}
+
         <p>Description: {{ task.description }}</p>
         <p>Project: {{ task.project.name }}</p>
         <button>
             Delete
+        </button>
+        <button>
+            Done
         </button>
     </div>
 
