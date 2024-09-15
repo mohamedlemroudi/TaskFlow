@@ -19,7 +19,7 @@ def projects(request):
     return JsonResponse(projects, safe=False)
 
 
-def tasks(request, id):
-    # task = Task.objects.get(id=id)
-    task = get_object_or_404(Task, id=id)
+def tasks(request, title):
+    task = Task.objects.get(title=title)
+    # task = get_object_or_404(Task, id=id)
     return HttpResponse('task: %s' % task.title)
