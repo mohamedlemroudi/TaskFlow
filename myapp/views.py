@@ -1,10 +1,13 @@
-from django.http import HttpResponse, JsonResponse, JsonResponse
+from django.http import HttpResponse
 from .models import Project, Task
 from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    title = 'Django Course!!'
+    return render(request, 'index.html', {
+        'title':title
+    })
 
 
 def about(request):
