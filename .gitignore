@@ -1,0 +1,2 @@
+# Ignorar migraciones de Django
+**/migrations/
