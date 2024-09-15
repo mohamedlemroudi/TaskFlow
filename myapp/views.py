@@ -11,15 +11,21 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    username = "Moa"
+    return render(request, 'about.html', {
+        "username":username 
+    })
 
 
 def hello(request, username):
     return HttpResponse("<h1>Hello %s!</h1>" % username)
 
 def projects(request):
-    projects = list(Project.objects.values())
-    return render(request, 'projects.html')
+    #projects = list(Project.objects.values())
+    projects = Project.objects.all()
+    return render(request, 'projects.html', {
+        'projects':projects
+    })
 
 
 def tasks(request):
