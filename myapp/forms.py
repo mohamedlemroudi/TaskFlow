@@ -1,10 +1,15 @@
 from django import forms
 
+# forms.py
+from django import forms
+from .models import Project, Task
+
 class CreateNewTask(forms.Form):
     """
     Form for creating a new task.
     - title: Text field for the task title.
     - description: Text area for the task description.
+    - project: Dropdown for selecting a project.
     """
     title = forms.CharField(
         label="Task Title:",
@@ -15,6 +20,12 @@ class CreateNewTask(forms.Form):
     description = forms.CharField(
         label="Task Description:",
         widget=forms.Textarea(attrs={'class': 'input'})
+    )
+
+    project = forms.ModelChoiceField(
+        queryset=Project.objects.all(),
+        label="Select Project:",
+        widget=forms.Select(attrs={'class': 'input'})
     )
 
 

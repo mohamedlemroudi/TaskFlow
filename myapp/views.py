@@ -45,25 +45,24 @@ def delete_task(request, task_id):
     task.delete()
     return redirect('tasks_list')
 
-
 def create_task(request):
-    """
-    Handle task creation. 
-    Display the form on GET requests and save the task on POST requests.
-    """
-    if request.method == 'GET':
-        # Render the form to create a new task
-        return render(request, 'tasks/create_task.html', {
-            'form': CreateNewTask()
-        })
-    elif request.method == 'POST':
-        # Create a new task with the form data
-        Task.objects.create(
-            title=request.POST['title'], 
-            description=request.POST['description'], 
-            project_id=2  # Note: this is hardcoded for now, consider improving
-        )
-        return redirect('tasks_list')
+    if request.method == 'POST':
+        form = CreateNewTask(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            description = form.cleaned_data['description']
+            project = form.cleaned_data['project']
+
+            # Crear la tarea
+            Task.objects.create(title=title, description=description, project=project)
+
+            return redirect('tasks_list')  # Redirige a una vista de lista de tareas o similar
+    else:
+        form = CreateNewTask()
+    
+    return render(request, 'tasks/create_task.html', {'form': form})
+
+
 
 def create_project(request):
     """
