@@ -1,7 +1,11 @@
 {% extends 'layouts/base.html' %}
 
+{% load static %}
+
 {% block content %}
 <h1>{{ title }}</h1>
+
+<img src="{% static 'img.jpg' %}" alt="img_django" width="200"/>
 
 <p>
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. At molestiae magnam deleniti, architecto corporis eius repellendus officiis eum suscipit possimus necessitatibus saepe nulla eveniet ipsa itaque, incidunt corrupti asperiores reiciendis!
