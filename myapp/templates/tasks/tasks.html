@@ -1,28 +1,32 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
+    <div class="tasks-container">
+        <h1 class="tasks-title">Tasks</h1>
 
-    <h1>Tasks</h1>
+        {% for task in tasks %}
+            <div class="task-card">
+                <div class="task-header">
+                    <h2 class="task-status">
+                        {% if not task.done %} 
+                            <span class="status-pending">Pending</span>
+                        {% else %} 
+                            <span class="status-done">Done</span>
+                        {% endif %}
+                        - {{ task.title }}
+                    </h2>
+                </div>
 
-    {% for task in tasks %}
+                <p class="task-description"><strong>Description:</strong> {{ task.description }}</p>
+                <p class="task-project"><strong>Project:</strong> {{ task.project.name }}</p>
 
-        <div>
-            {# para realizar un comentario que no se ve en HTML... #}
-            <h1>
-                {% if task.done == False %} Tarea pendiente {% else %} Tarea realizada {% endif %}
-                - {{ task.title }}
-            </h1>
-
-            <p>Description: {{ task.description }}</p>
-            <p>Project: {{ task.project.name }}</p>
-            <button>
-                Delete
-            </button>
-            <button>
-                Done
-            </button>
-        </div>
-
-    {% endfor %}
-
+                <div class="task-buttons">
+                    <a href="{% url 'delete_task' task.id %}" class="btn btn-delete">Delete</a>
+                    {% if not task.done %}
+                        <a href="{% url 'mark_task_done' task.id %}" class="btn btn-done">Mark as Done</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

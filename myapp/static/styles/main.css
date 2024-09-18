@@ -1,4 +1,5 @@
-/* Reset some default browser styling */
+/* GLOBAL STYLES */
+/* Reset default browser styling */
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +7,8 @@
 }
 
 html, body {
-    height: 100%; /* Ensure the body takes up the full height of the page */
-    overflow-x: hidden; /* Prevent both vertical and horizontal scrolling */
+    height: 100%;
+    overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
     background-color: #1c1c1c;
     color: #f1f1f1;
@@ -19,10 +20,10 @@ body {
 }
 
 main {
-    flex: 1; /* Take up remaining space so the footer sticks to the bottom */
+    flex: 1;
 }
 
-/* Navigation bar */
+/* NAVIGATION STYLES */
 .navbar {
     background-color: #333;
     padding: 10px 20px;
@@ -58,11 +59,76 @@ main {
 
 .navbar ul li a:hover {
     color: #333;
-    background-color: rgb(255, 0, 0);
+    background-color: #2ecc71; /* Green hover effect */
     border-radius: 5px;
 }
 
-/* Main content area */
+/* INTRO HEADER */
+.intro-header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.intro-title {
+    font-size: 36px;
+    color: #2ecc71; /* Green title color matching Django logo */
+}
+
+.intro-image {
+    margin-top: 20px;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* INTRO CONTENT */
+.intro-content {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro-content h2 {
+    font-size: 28px;
+    color: #2ecc71; /* Heading in green */
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #f1f1f1;
+}
+
+/* INTRO FOOTER */
+.intro-footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.intro-footer p {
+    font-size: 16px;
+    color: #999;
+}
+
+.intro-footer a {
+    color: #2ecc71; /* Link color matching the Django green */
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.intro-footer a:hover {
+    border-color: #2ecc71;
+}
+
+/* MAIN CONTENT STYLES */
 .container {
     max-width: 1100px;
     margin: 40px auto;
@@ -72,7 +138,7 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Cards */
+/* CARD STYLES */
 .card {
     background-color: #f1f1f1;
     color: #333;
@@ -90,7 +156,7 @@ main {
     margin: 0;
 }
 
-/* Form inputs */
+/* FORM INPUT STYLES */
 .input {
     width: 100%;
     padding: 10px;
@@ -101,11 +167,11 @@ main {
 }
 
 .input:focus {
-    border-color: aqua;
+    border-color: #2ecc71; /* Green border on focus */
     outline: none;
 }
 
-/* Footer */
+/* FOOTER STYLES */
 footer {
     background-color: #333;
     text-align: center;
@@ -114,4 +180,427 @@ footer {
     width: 100%;
     margin-top: auto;
     position: relative;
+}
+
+/* MEDIA QUERIES */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* ABOUT PAGE STYLES */
+
+/* Title styling */
+.about-title {
+    font-size: 36px;
+    color: #2ecc71; /* Green color matching Django's logo */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+.about-content p {
+    line-height: 1.8;
+    font-size: 18px;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Styling for the created by line */
+.about-content .created-by {
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    color: #999;
+}
+
+.about-content .created-by span {
+    color: #2ecc71; /* Green highlight for the username */
+    font-weight: bold;
+}
+
+/* GitHub link styling */
+.github-link {
+    color: #2ecc71; /* Green to match the theme */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.github-link:hover {
+    color: #fff;
+    border-bottom: 2px solid #2ecc71;
+}
+
+/* PROJECTS PAGE STYLES */
+
+/* Projects container */
+.projects-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styling */
+.projects-title {
+    font-size: 36px;
+    color: #2ecc71; /* Django's green color */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Projects list */
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Each project card */
+.project-card {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(33.333% - 20px); /* Three projects per row with spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Project title */
+.project-card h2 {
+    font-size: 24px;
+    color: #2ecc71;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Project description */
+.project-card p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* Project link */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-link:hover h2 {
+    color: #27ae60; /* Slightly darker green on hover */
+}
+
+
+/* PROJECT DETAIL PAGE STYLES */
+
+/* Project detail container */
+.project-detail-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Project title styling */
+.project-title {
+    font-size: 36px;
+    color: #2ecc71; /* Django's green color */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Tasks list */
+.tasks-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Each task card */
+.task-card {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(50% - 20px); /* Two tasks per row with spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Task title */
+.task-card h2 {
+    font-size: 24px;
+    color: #2ecc71;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Task description */
+.task-card p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* FORM STYLES */
+
+/* Form container */
+.form-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form title styling */
+.form-title {
+    font-size: 32px;
+    color: #2ecc71; /* Django green */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Project form */
+.project-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Django form fields */
+.project-form input[type="text"],
+.project-form input[type="email"],
+.project-form input[type="password"],
+.project-form textarea,
+.project-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.project-form input:focus,
+.project-form textarea:focus,
+.project-form select:focus {
+    border-color: #2ecc71;
+    outline: none;
+}
+
+/* Submit button */
+.submit-button {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+}
+
+
+/* Tasks container */
+.tasks-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #f1f1f1;
+}
+
+/* Title */
+.tasks-title {
+    color: #2ecc71; /* Green color to match Django theme */
+    margin-bottom: 30px; /* Increased space below title */
+    font-size: 28px; /* Larger font size for title */
+    text-align: center; /* Center align title */
+}
+
+/* Task card */
+.task-card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px; /* Space between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: 100%; /* Full width of the container */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Task header */
+.task-header {
+    margin-bottom: 15px; /* Space below task header */
+}
+
+/* Task status */
+.task-status {
+    font-size: 20px; /* Slightly larger font size */
+    font-weight: bold; /* Bold text for status */
+}
+
+.status-pending {
+    color: #e74c3c; /* Red for pending */
+}
+
+.status-done {
+    color: #2ecc71; /* Green for done */
+}
+
+/* Task description and project */
+.task-description, .task-project {
+    margin-bottom: 15px; /* Space between description and project */
+}
+
+/* Buttons */
+.task-buttons {
+    margin-top: 20px; /* Space above buttons */
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: flex-start; /* Align buttons to the left */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px; /* Larger button padding */
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    background-color: #e74c3c; /* Red background for delete */
+}
+
+.btn-delete:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+.btn-done {
+    background-color: #2ecc71; /* Green background for done */
+}
+
+.btn-done:hover {
+    background-color: #27ae60; /* Darker green on hover */
+}
+
+
+/* FORM TASKS */
+
+/* Form container */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2a2a2a; /* Dark background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #f1f1f1; /* Light text */
+}
+
+/* Form elements */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-form .form-field {
+    margin-bottom: 15px;
+}
+
+.task-form .form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.task-form .form-field input,
+.task-form .form-field select,
+.task-form .form-field textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444; /* Darker border for better contrast */
+    background-color: #333; /* Dark background */
+    color: #f1f1f1; /* Light text */
+    box-sizing: border-box;
+}
+
+.task-form .form-field input:focus,
+.task-form .form-field select:focus,
+.task-form .form-field textarea:focus {
+    border-color: #2ecc71; /* Green for focus */
+    outline: none;
+}
+
+/* Submit button */
+.btn-submit {
+    background-color: #2ecc71; /* Green background to match Django theme */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.btn-submit:hover {
+    background-color: #27ae60; /* Darker green for hover effect */
+    transform: translateY(-3px);
 }

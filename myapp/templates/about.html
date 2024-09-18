@@ -1,12 +1,23 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-    <h1>About</h1>
+    <div class="about-content">
+        <h1 class="about-title">About This Website</h1>
 
-    <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit iusto ea illo nostrum necessitatibus quo modi accusantium sequi inventore, ad quasi vitae, a totam voluptas nisi. Nihil obcaecati maiores dolor quos quidem ducimus velit debitis vel, consectetur iste eius eveniet recusandae dignissimos iure dolorem accusantium earum ipsam consequuntur! Inventore repudiandae molestias ullam eos quo, sit maxime nisi earum. Totam soluta aperiam deleniti quos enim iure. Culpa quaerat explicabo asperiores minima commodi consequatur, doloremque maxime quam eum unde molestiae! Modi esse cupiditate nobis, officiis quas laudantium. Eius, accusantium, ea explicabo placeat repellat incidunt nisi ipsa vel natus quaerat, blanditiis pariatur illo.
-    </p>
+        <p>
+            This website is built with <strong>Django</strong>, a powerful and versatile web framework designed for rapid development and clean design. The purpose of this platform is to serve as a learning resource where you can explore various features of Django and see real-world examples of its capabilities.
+        </p>
 
-    <p>Website created by {{ username }}</p>
+        <p>
+            Here, you'll find numerous demos, tutorials, and resources that will help you understand how Django works. The source code for many of the projects displayed is also shared on my <a href="https://github.com/mohamedlemroudi" target="_blank" rel="noopener noreferrer" class="github-link">GitHub</a>, so you can explore it, learn from it, and even contribute.
+        </p>
+
+        <p>
+            Whether you're just starting out or looking to deepen your knowledge of Django, this site will provide you with valuable insights and practical examples.
+        </p>
+
+        <p class="created-by">Website created by <span>{{ username }}</span></p>
+    </div>
 {% endblock %}
+
 

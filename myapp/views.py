@@ -30,14 +30,21 @@ def projects(request):
         'projects': projects
     })
 
-def tasks(request):
-    """
-    Fetch all tasks and render them on the 'tasks' page.
-    """
+def tasks_list(request):
     tasks = Task.objects.all()
-    return render(request, 'tasks/tasks.html', {
-        'tasks': tasks
-    })
+    return render(request, 'tasks/tasks.html', {'tasks': tasks})
+
+def mark_task_done(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    task.done = True
+    task.save()
+    return redirect('tasks_list')
+
+def delete_task(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    task.delete()
+    return redirect('tasks_list')
+
 
 def create_task(request):
     """
@@ -56,7 +63,7 @@ def create_task(request):
             description=request.POST['description'], 
             project_id=2  # Note: this is hardcoded for now, consider improving
         )
-        return redirect('tasks')
+        return redirect('tasks_list')
 
 def create_project(request):
     """

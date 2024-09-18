@@ -1,15 +1,18 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-    <h1>Projects</h1>
+    <div class="projects-container">
+        <h1 class="projects-title">Projects</h1>
 
-    {% for project in projects %}
-
-    <article class="card">
-        <a href="{% url 'project_detail' project.id %}">
-            <h1>{{ project.name }}</h1>
-        </a>
-    </article>
-
-    {% endfor %}
+        <div class="projects-list">
+            {% for project in projects %}
+            <article class="project-card">
+                <a href="{% url 'project_detail' project.id %}" class="project-link">
+                    <h2>{{ project.name }}</h2>
+                </a>
+                <p>{{ project.short_description }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
