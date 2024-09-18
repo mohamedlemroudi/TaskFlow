@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <nav>
+    <nav class="navbar container">
         <ul>
             <li><a href="{% url 'index' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
@@ -21,8 +21,10 @@
         </ul>
     </nav>
     
-    {% block content %}
-    {% endblock %}
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 
 </body>
 </html>
